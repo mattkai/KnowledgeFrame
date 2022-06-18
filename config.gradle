@@ -1,0 +1,30 @@
+ext {
+    isDebug = false // true 各个模块调试  false 组成一个apk
+
+    applicationId = [
+            "app" : "com.kdf.app",
+            "frame" : "com.kdf.frame"
+    ]
+
+    app = [
+            "compileSdk" : 31,
+            "minSdk" : 24,
+            "targetSdk" : 31,
+            "versionCode" : 1,
+            "versionName" : "1.0"
+    ]
+
+    channels = [
+            "xiaomi" : [
+                    "applicationId" : "com.kdf.xiaomi",
+                    "versionName" : "1.0.1.10",
+                    "appName" : "小米渠道"
+            ],
+            "wandoujia" : [
+                    "applicationId" : "com.kdf.wandoujia",
+                    "versionName" : "1.0.1.08",
+                    "appName" : "豌豆荚渠道"
+            ]
+    ]
+
+}

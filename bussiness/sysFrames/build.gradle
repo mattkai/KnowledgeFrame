@@ -1,0 +1,41 @@
+apply plugin : PluginLibs.kotlinAndroid
+if (rootProject.ext.isDebug) {
+    apply plugin : PluginLibs.application
+} else {
+    apply plugin : PluginLibs.library
+}
+
+android {
+    compileSdk = 31
+    defaultConfig {
+        minSdk 24
+        targetSdk 31
+        if (rootProject.ext.isDebug)
+            applicationId rootProject.ext.applicationId.frame
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+
+    testImplementation TestLibs.junit
+    androidTestImplementation TestLibs.ext_junit
+    androidTestImplementation TestLibs.espresso
+
+    implementation(AndroidXLibs.appcompat)
+    implementation(AndroidXLibs.constraintlayout)
+    implementation(AndroidXLibs.core_ktx)
+
+    implementation(GoogleLibs.material)
+
+}

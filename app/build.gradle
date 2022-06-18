@@ -1,43 +1,111 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+apply plugin :  PluginLibs.application
+apply plugin :  PluginLibs.kotlinAndroid
+apply plugin :  PluginLibs.kotlinKapt
+
+// 获取当前时间
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
 
 android {
-    compileSdk 31
+    compileSdk rootProject.ext.app.compileSdk
 
     defaultConfig {
-        applicationId "com.kdf.more"
-        minSdk 24
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.applicationId.app
+        minSdk rootProject.ext.app.minSdk
+        targetSdk rootProject.ext.app.targetSdk
+        versionCode rootProject.ext.app.versionCode
+        versionName rootProject.ext.app.versionName
+        flavorDimensions "versionCode"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        Properties properties = new Properties()
+        File mFile = project.file('release.properties')
+        if (mFile.exists()) {
+            properties.load(mFile.newDataInputStream())
+
+            File keyFile = project.file(properties.getProperty("RELEASE_KEY_PROPERTIES_PATH"))
+            if (keyFile.exists()) {
+                properties.load(keyFile.newDataInputStream())
+            }
+        }
+
+        release {
+            keyAlias properties.getProperty("RELEASE_KEY_ALIAS")
+            keyPassword properties.getProperty("RELEASE_KEY_PASSWORD")
+            storeFile file(properties.getProperty("RELEASE_KEY_PATH"))
+            storePassword properties.getProperty("RELEASE_STORE_PASSWORD")
+            v2SigningEnabled true
+        }
+
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfigs.release
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    lintOptions{
+        abortOnError false
+    }
+
+    productFlavors {
+        xiaomi {
+            applicationId channels.xiaomi.applicationId  // 单独的包名
+            versionName channels.xiaomi.versionName // 单独的版本号
+        }
+        wandoujia {
+            applicationId channels.wandoujia.applicationId  // 单独的包名
+            versionName channels.wandoujia.versionName // 单独的版本号
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+
+        variant.outputs.all {
+
+            def fileName = "${variant.productFlavors.name}_v${variant.versionName}_${releaseTime()}.apk"
+
+            //这个修改输出的APK路径
+            if (variant.buildType.name != "debug") {//防止AS无法安装debug包(apk)
+                outputFileName = new File("../../../../../../outapks", fileName)
+            } else {
+                outputFileName = new File(fileName)
+            }
+        }
+    }
+
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation TestLibs.junit
+    androidTestImplementation TestLibs.ext_junit
+    androidTestImplementation TestLibs.espresso
+
+    implementation(AndroidXLibs.appcompat)
+    implementation(AndroidXLibs.constraintlayout)
+    implementation(AndroidXLibs.core_ktx)
+
+    implementation(GoogleLibs.material)
 }
