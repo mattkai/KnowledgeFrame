@@ -21,9 +21,20 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isDebug)
+                manifest.srcFile "src/main/AndroidManifest.xml"
+            else
+                manifest.srcFile "src/main/moudle/AndroidManifest.xml"
+        }
+    }
+
 }
 
 dependencies {
@@ -31,6 +42,9 @@ dependencies {
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.ext_junit
     androidTestImplementation TestLibs.espresso
+
+    implementation project(':libs:hiLog')
+    implementation project(':libs:hiRestful')
 
     implementation(AndroidXLibs.appcompat)
     implementation(AndroidXLibs.constraintlayout)

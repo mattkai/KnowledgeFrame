@@ -34,10 +34,17 @@ object NetLibs {
 object ToolLibs {
     const val autoSize = "me.jessyan:autosize:1.1.2"
     const val utilcodex = "com.blankj:utilcodex:1.30.6"
+
     const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+
     const val rxjava = "io.reactivex.rxjava2:rxjava:2.2.3"
     const val rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.0"
+
+    const val room = "androidx.room:room-runtime:2.4.0-alpha02"
+    const val room_compiler = "androidx.room:room-compiler:2.4.0-alpha02"
+
+
 }
 
 

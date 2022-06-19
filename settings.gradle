@@ -1,3 +1,5 @@
 rootProject.name = "KnowledgeFrame"
 include ':app'
 include ':bussiness:sysFrames'
+include ':libs:hiRestful'
+include ':libs:hiLog'

@@ -1,1 +1,1 @@
-# 本模块主要是将MVC、MVP、MVVM进行实例说明
+# 本模块主要是将MVVM进行实例说明并采用Retrofit、livedata、RxJava、协成、Flow进行数据比对
