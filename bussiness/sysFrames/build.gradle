@@ -1,4 +1,5 @@
 apply plugin : PluginLibs.kotlinAndroid
+apply plugin : PluginLibs.kotlinAndroidExtensions
 if (rootProject.ext.isDebug) {
     apply plugin : PluginLibs.application
 } else {

@@ -2,8 +2,11 @@ package com.kdf.sysframes.ui.net
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.kdf.sysframes.R
 import com.kdf.sysframes.base.BaseVMActivity
+import com.kdf.sysframes.data.TypeApiData
 import com.kdf.sysframes.databinding.ActivityTypeApiBinding
 
 class TypeApiActivity: BaseVMActivity<TypeApiViewModel>(){
@@ -21,8 +24,13 @@ class TypeApiActivity: BaseVMActivity<TypeApiViewModel>(){
 
         mDataBinding.apply {
             btnListData.setOnClickListener {
-                mViewModel.getDataList2()
+                mViewModel.getDataList()
             }
+
+            mViewModel.mTypeApiData.observeForever { data ->
+                tvData.text = data.title
+            }
+
         }
 
     }
