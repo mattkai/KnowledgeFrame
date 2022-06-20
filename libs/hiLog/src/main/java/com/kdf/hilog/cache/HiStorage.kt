@@ -1,4 +1,4 @@
-package org.devio.hi.library.cache
+package com.kdf.hilog.cache
 
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream

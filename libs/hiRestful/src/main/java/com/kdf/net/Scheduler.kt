@@ -1,10 +1,10 @@
 package com.kdf.net
 
 import com.kdf.hilog.HiLog
+import com.kdf.hilog.cache.HiStorage
 import com.kdf.net.annotation.CacheStrategy
 import com.kdf.net.thread.HiExecutor
 import com.kdf.net.thread.MainHandler
-import org.devio.hi.library.cache.HiStorage
 
 /**
  * 代理CallFactory创建出来的call对象，从而实现拦截器的派发动作

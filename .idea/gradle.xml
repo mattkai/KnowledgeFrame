@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/libs" />
             <option value="$PROJECT_DIR$/libs/hiLog" />
             <option value="$PROJECT_DIR$/libs/hiRestful" />
+            <option value="$PROJECT_DIR$/libs/tools" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

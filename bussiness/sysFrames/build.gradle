@@ -26,6 +26,12 @@ android {
         jvmTarget = "1.8"
     }
 
+    buildFeatures {
+        dataBinding true
+        // for view binding :
+        // viewBinding = true
+    }
+
     sourceSets {
         main {
             if (rootProject.ext.isDebug)
@@ -49,7 +55,12 @@ dependencies {
     implementation(AndroidXLibs.appcompat)
     implementation(AndroidXLibs.constraintlayout)
     implementation(AndroidXLibs.core_ktx)
-
     implementation(GoogleLibs.material)
+    implementation ToolLibs.gosn
+    implementation ToolLibs.viewModel
+
+    implementation NetLibs.retrofit
+    implementation NetLibs.retrofit_adapter
+    implementation NetLibs.retrofit_converter
 
 }

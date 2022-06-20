@@ -8,11 +8,9 @@ import androidx.lifecycle.MutableLiveData
 import com.kdf.net.thread.mainThreadRun
 import com.kdf.sysframes.data.MsgEvent
 
-class BaseViewModel(application: Application): AndroidViewModel(application) {
+open class BaseViewModel(application: Application): AndroidViewModel(application) {
 
-    private val mContext: Application by lazy {
-        application
-    }
+    private val mContext: Context = application
 
     private val mEventDataList = MutableLiveData<MsgEvent>()
 

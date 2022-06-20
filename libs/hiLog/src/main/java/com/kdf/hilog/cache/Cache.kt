@@ -1,4 +1,4 @@
-package org.devio.hi.library.cache
+package com.kdf.hilog.cache
 
 import androidx.annotation.NonNull
 import androidx.room.Entity

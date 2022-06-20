@@ -1,6 +1,8 @@
 package com.kdf.sysframes.base
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -10,10 +12,12 @@ import com.kdf.sysframes.data.MsgEvent
 abstract class BaseVMActivity<T: BaseViewModel>: AppCompatActivity() {
 
     companion object {
-        const val EVENT_PAGE_CLOSE = 300
+        const val EVENT_PAGE_CLOSE = 300 // 页面关闭
+        const val EVENT_PAGE_PROMPT = 301 // 页面提示
+        const val EVENT_PAGE_DIALOG = 302 // 页面弹出框
     }
 
-    private lateinit var mViewModel: T
+    lateinit var mViewModel: T
 
     abstract fun getViewModel() : Class<T>
 
@@ -37,10 +41,24 @@ abstract class BaseVMActivity<T: BaseViewModel>: AppCompatActivity() {
     open fun dealEvent(event: MsgEvent?): Boolean {
         when(event?.eventCode) {
             EVENT_PAGE_CLOSE -> {
-
+                finish()
+                return true
+            }
+            EVENT_PAGE_PROMPT -> {
+                Toast.makeText(this,event.extraObj.toString(),
+                    Toast.LENGTH_SHORT).show()
+                return true
+            }
+            EVENT_PAGE_DIALOG -> {
+                return true
             }
         }
         return false
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mEventDataList.removeObserver(mEventObserver)
     }
 
 }
