@@ -80,6 +80,7 @@ android {
         }
     }
 
+    //自动化打包
     android.applicationVariants.all { variant ->
 
         variant.outputs.all {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.kdf.net.thread.bgThreadRun
 import com.kdf.sysframes.R
 import com.kdf.sysframes.base.BaseVMActivity
 import com.kdf.sysframes.data.TypeApiData
@@ -24,7 +25,7 @@ class TypeApiActivity: BaseVMActivity<TypeApiViewModel>(){
 
         mDataBinding.apply {
             btnListData.setOnClickListener {
-                mViewModel.getDataList()
+                mViewModel.getDataList3()
             }
 
             mViewModel.mTypeApiData.observeForever { data ->
@@ -34,5 +35,10 @@ class TypeApiActivity: BaseVMActivity<TypeApiViewModel>(){
         }
 
     }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
 
 }
