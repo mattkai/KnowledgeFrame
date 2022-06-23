@@ -1,7 +1,8 @@
-package com.kdf.sysframes
+package com.kdf.sysframes.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.kdf.sysframes.R
 
 class FramesActivity: AppCompatActivity() {
 

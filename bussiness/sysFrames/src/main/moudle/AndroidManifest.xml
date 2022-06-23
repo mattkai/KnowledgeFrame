@@ -3,7 +3,7 @@
     package="com.kdf.sysframes">
 
     <application>
-        <activity android:name=".FramesActivity"/>
+        <activity android:name=".ui.FramesActivity"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.kdf.sysframes
+package com.kdf.sysframes.ui
 
 import android.app.Application
 import com.google.gson.Gson
