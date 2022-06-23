@@ -5,8 +5,9 @@ object PluginLibs {
     const val application = "com.android.application"
     const val library = "com.android.library"
     const val kotlinAndroid = "kotlin-android"
-    const val kotlinAndroidExtensions = "kotlin-android-extensions"
     const val kotlinKapt = "kotlin-kapt"
+    const val hilt = "dagger.hilt.android.plugin"
+    const val parcel = "kotlin-parcelize"
 }
 
 object AndroidXLibs {
@@ -17,6 +18,8 @@ object AndroidXLibs {
 
 object GoogleLibs {
     const val material = "com.google.android.material:material:1.4.0"
+    const val hilt = "com.google.dagger:hilt-android:2.38.1"
+    const val hilt_compiler = "com.google.dagger:hilt-android-compiler:2.38.1"
 }
 
 object TestLibs {

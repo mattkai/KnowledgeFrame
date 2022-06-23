@@ -14,7 +14,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.KnowledgeFrame">
         <activity
-            android:name=".ui.webview.WebViewActivity"
+            android:name=".ui.hilt.HiltExActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

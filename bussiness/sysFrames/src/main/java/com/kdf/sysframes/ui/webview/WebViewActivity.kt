@@ -34,6 +34,7 @@ class WebViewActivity: AppCompatActivity() {
         webSetting.allowFileAccessFromFileURLs = false
         webSetting.javaScriptEnabled = true
         webSetting.javaScriptCanOpenWindowsAutomatically = true
+        webSetting.savePassword = false
 
         webView!!.addJavascriptInterface(JsInterface(),"test")
         webView!!.loadUrl("file:///android_asset/index.html")

@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
 @Parcelize
-data class Student(
+data class Student (
     var namer: String,
     var courses: List<String>
 ): Serializable,Parcelable {

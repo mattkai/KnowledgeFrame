@@ -6,7 +6,10 @@ import com.kdf.hilog.HiConsolePrinter
 import com.kdf.hilog.HiFilePrinter
 import com.kdf.hilog.HiLogConfig
 import com.kdf.hilog.HiLogManager
+import dagger.hilt.android.HiltAndroidApp
 
+
+@HiltAndroidApp
 class FramesApplication: Application() {
 
     override fun onCreate() {

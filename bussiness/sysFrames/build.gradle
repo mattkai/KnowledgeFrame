@@ -1,10 +1,13 @@
-apply plugin : PluginLibs.kotlinAndroid
-apply plugin : PluginLibs.kotlinAndroidExtensions
 if (rootProject.ext.isDebug) {
     apply plugin : PluginLibs.application
 } else {
     apply plugin : PluginLibs.library
 }
+
+apply plugin : PluginLibs.kotlinAndroid
+apply plugin : PluginLibs.kotlinKapt
+apply plugin : PluginLibs.parcel
+apply plugin : PluginLibs.hilt
 
 android {
     compileSdk = 31
@@ -53,10 +56,10 @@ dependencies {
     implementation project(':libs:hiLog')
     implementation project(':libs:hiRestful')
 
-    implementation(AndroidXLibs.appcompat)
-    implementation(AndroidXLibs.constraintlayout)
-    implementation(AndroidXLibs.core_ktx)
-    implementation(GoogleLibs.material)
+    implementation AndroidXLibs.appcompat
+    implementation AndroidXLibs.constraintlayout
+    implementation AndroidXLibs.core_ktx
+    implementation GoogleLibs.material
     implementation ToolLibs.gosn
     implementation ToolLibs.viewModel
 
@@ -66,5 +69,8 @@ dependencies {
 
     implementation ToolLibs.rxjava
     implementation ToolLibs.rxandroid
+
+    implementation GoogleLibs.hilt
+    kapt GoogleLibs.hilt_compiler
 
 }
