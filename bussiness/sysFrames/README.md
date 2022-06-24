@@ -48,6 +48,12 @@
 # 不仅在xml中定义每个fragment跳转的Action, 还需要在每个Fragment代码界面中通过
 # Navigation.findNavController(xx).navigate(xxxx)代码进行跳转
 
+# Room 持久化存储
+
+# 通过Entity("xxxx")定义表格 并通过@Primary、@ColumnInfo设置字段
+# 创建Dao接口并添加@Dao注解和@Insert、@Query、@Delete、@Update
+# 创建数据库管理类需要继承RoomDataBase
+
 
 
 

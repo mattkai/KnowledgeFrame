@@ -80,4 +80,7 @@ dependencies {
     implementation AndroidXLibs.navigation_fragment
     implementation AndroidXLibs.navigation_ui
 
+    implementation AndroidXLibs.room
+    kapt AndroidXLibs.room_compiler
+
 }

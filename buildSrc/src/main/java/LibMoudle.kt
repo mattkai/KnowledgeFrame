@@ -16,6 +16,8 @@ object AndroidXLibs {
     const val appcompat = "androidx.appcompat:appcompat:1.3.0"
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:2.4.2"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:2.4.2"
+    const val room = "androidx.room:room-runtime:2.4.0-alpha02"
+    const val room_compiler = "androidx.room:room-compiler:2.4.0-alpha02"
 }
 
 object GoogleLibs {
