@@ -73,4 +73,6 @@ dependencies {
     implementation GoogleLibs.hilt
     kapt GoogleLibs.hilt_compiler
 
+    implementation ToolLibs.mmkv
+
 }

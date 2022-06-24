@@ -30,7 +30,13 @@
 # 对于多接口需要添加
 # @Qualifier
 # @Retention(AnnotationRetention.BINARY)
-# annotation class xxxx
+# annotation class xxxx 注释类
+
+# MMKV 是有腾讯推出的轻量级存储框架
+# 为了解决我们常用的SharePreference框架中存在的缺点，
+# （1）不能进行跨进程
+# （2）多线程中进行效率低，执行commit、put操作时需要对资源进行锁操作
+# MMKV可以解决这个问题同时针对存储采用了protoBuf（google提出的数据结构序列化）协议提升存储效率
 
 
 

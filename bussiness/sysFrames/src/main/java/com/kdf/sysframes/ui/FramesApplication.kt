@@ -2,10 +2,8 @@ package com.kdf.sysframes.ui
 
 import android.app.Application
 import com.google.gson.Gson
-import com.kdf.hilog.HiConsolePrinter
-import com.kdf.hilog.HiFilePrinter
-import com.kdf.hilog.HiLogConfig
-import com.kdf.hilog.HiLogManager
+import com.kdf.hilog.*
+import com.tencent.mmkv.MMKV
 import dagger.hilt.android.HiltAndroidApp
 
 
@@ -15,6 +13,7 @@ class FramesApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         initLog()
+        initMMKV()
     }
 
     private fun initLog() {
@@ -38,6 +37,12 @@ class FramesApplication: Application() {
                 60 * 60 * 1000
             )
         )
+    }
+
+    private fun initMMKV() {
+        val filePath = "${filesDir.absolutePath}/mmkv_2"
+        val mmkvPath = MMKV.initialize(this,filePath)
+        HiLog.d("mmkvPath: $mmkvPath")
     }
 
 }

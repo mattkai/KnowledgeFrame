@@ -48,6 +48,7 @@ object ToolLibs {
     const val room_compiler = "androidx.room:room-compiler:2.4.0-alpha02"
 
     const val gosn = "com.google.code.gson:gson:2.8.6"
+    const val mmkv = "com.tencent:mmkv:1.2.13"
 
 }
 
