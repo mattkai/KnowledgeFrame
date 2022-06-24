@@ -14,6 +14,8 @@ object AndroidXLibs {
     const val constraintlayout =  "androidx.constraintlayout:constraintlayout:2.0.4"
     const val core_ktx = "androidx.core:core-ktx:1.7.0"
     const val appcompat = "androidx.appcompat:appcompat:1.3.0"
+    const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:2.4.2"
+    const val navigation_ui = "androidx.navigation:navigation-ui-ktx:2.4.2"
 }
 
 object GoogleLibs {

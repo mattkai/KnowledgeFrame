@@ -33,10 +33,20 @@
 # annotation class xxxx 注释类
 
 # MMKV 是有腾讯推出的轻量级存储框架
+
 # 为了解决我们常用的SharePreference框架中存在的缺点，
 # （1）不能进行跨进程
 # （2）多线程中进行效率低，执行commit、put操作时需要对资源进行锁操作
 # MMKV可以解决这个问题同时针对存储采用了protoBuf（google提出的数据结构序列化）协议提升存储效率
+
+# navigation
+
+# 为了解决以前框架常用的在主页面通过Activity+Fragment进行Fragment页面切换
+# 如果遇到多个Fragment在界面进行切换时就会让代码变得臃肿
+# navigation的导航框架会减少Activity的代码编写，只需要通过在res文件夹下创建navigation文件
+# 同时在该文件创建naviGraph.xml文件里面就可以编写多种fragment进行跳转切换了。
+# 不仅在xml中定义每个fragment跳转的Action, 还需要在每个Fragment代码界面中通过
+# Navigation.findNavController(xx).navigate(xxxx)代码进行跳转
 
 
 

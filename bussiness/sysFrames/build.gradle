@@ -8,6 +8,7 @@ apply plugin : PluginLibs.kotlinAndroid
 apply plugin : PluginLibs.kotlinKapt
 apply plugin : PluginLibs.parcel
 apply plugin : PluginLibs.hilt
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     compileSdk = 31
@@ -49,6 +50,7 @@ android {
 
 dependencies {
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.ext_junit
     androidTestImplementation TestLibs.espresso
@@ -74,5 +76,8 @@ dependencies {
     kapt GoogleLibs.hilt_compiler
 
     implementation ToolLibs.mmkv
+
+    implementation AndroidXLibs.navigation_fragment
+    implementation AndroidXLibs.navigation_ui
 
 }
