@@ -25,8 +25,8 @@ class RoomActivity: AppCompatActivity() {
         mDataBinding.apply {
 
             btnDbAdd.setOnClickListener {
-                dataBase.getCnStuDao().addStu(CnStudent(123,"wukai",23))
-                dataBase.getCnStuDao().addStu(CnStudent(125,"gaoli",26))
+                dataBase.getCnStuDao().addStu(CnStudent(123,"wukai",23,1))
+                dataBase.getCnStuDao().addStu(CnStudent(125,"gaoli",26,1))
             }
 
             btnDbDel.setOnClickListener {
@@ -41,7 +41,7 @@ class RoomActivity: AppCompatActivity() {
             }
 
             btnDbUpd.setOnClickListener {
-                dataBase.getCnStuDao().updStu(CnStudent(123,"wukai",45))
+                dataBase.getCnStuDao().updStu(CnStudent(123,"wukai",45,1))
             }
 
         }

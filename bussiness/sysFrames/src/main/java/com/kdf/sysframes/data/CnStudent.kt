@@ -14,10 +14,12 @@ data class CnStudent(
     @ColumnInfo
     var name: String,
     @ColumnInfo
-    var age: Int
+    var age: Int,
+    @ColumnInfo
+    var sex: Int
 ): Parcelable {
 
     override fun toString(): String {
-        return "CnStudent(id=$id, name='$name', age=$age)"
+        return "CnStudent(id=$id, name='$name', age=$age, sex=$sex)"
     }
 }
