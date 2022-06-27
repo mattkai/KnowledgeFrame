@@ -61,6 +61,7 @@ dependencies {
     implementation AndroidXLibs.appcompat
     implementation AndroidXLibs.constraintlayout
     implementation AndroidXLibs.core_ktx
+    implementation AndroidXLibs.kotlin_runtime
     implementation GoogleLibs.material
     implementation ToolLibs.gosn
     implementation ToolLibs.viewModel

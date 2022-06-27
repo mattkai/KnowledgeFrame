@@ -18,6 +18,7 @@ object AndroidXLibs {
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:2.4.2"
     const val room = "androidx.room:room-runtime:2.4.0-alpha02"
     const val room_compiler = "androidx.room:room-compiler:2.4.0-alpha02"
+    const val kotlin_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
 }
 
 object GoogleLibs {

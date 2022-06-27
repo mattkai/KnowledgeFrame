@@ -4,11 +4,15 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import com.kdf.hilog.HiLog
 import com.kdf.net.thread.bgThreadRun
 import com.kdf.sysframes.R
 import com.kdf.sysframes.base.BaseVMActivity
 import com.kdf.sysframes.data.TypeApiData
 import com.kdf.sysframes.databinding.ActivityTypeApiBinding
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class TypeApiActivity: BaseVMActivity<TypeApiViewModel>(){
 
@@ -25,11 +29,17 @@ class TypeApiActivity: BaseVMActivity<TypeApiViewModel>(){
 
         mDataBinding.apply {
             btnListData.setOnClickListener {
-                mViewModel.getDataList3()
+                mViewModel.getDataList4()
             }
 
             mViewModel.mTypeApiData.observeForever { data ->
                 tvData.text = data.title
+            }
+
+            lifecycleScope.launch {
+                mViewModel.shareFlow.collect {
+                    HiLog.d( "### ${it.toString()}")
+                }
             }
 
         }

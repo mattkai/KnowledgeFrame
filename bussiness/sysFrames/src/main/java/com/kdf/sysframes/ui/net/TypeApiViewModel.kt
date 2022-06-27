@@ -18,6 +18,8 @@ import io.reactivex.Observable
 import io.reactivex.functions.Consumer
 import io.reactivex.functions.Function
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -90,8 +92,23 @@ class TypeApiViewModel(context: Application): BaseViewModel(context) {
                     HiLog.d("@@@@@@@@ $course")
                 }
             }
+    }
 
+    val shareFlow = MutableSharedFlow<TypeApiData>()
 
+    val stateFlow = MutableStateFlow<TypeApiData>(TypeApiData(0,0,"",""))
+
+    fun getDataList4() {
+//        viewModelScope.launch {
+//            shareFlow.emit("12345")
+//            shareFlow.emit("abcdf")
+//        }
+
+        viewModelScope.launch(Dispatchers.IO) {
+            var response = NetApi.createNetApi().getDataById2(5)
+            //shareFlow.emit(response)
+            stateFlow.emit(response)
+        }
     }
 
 
