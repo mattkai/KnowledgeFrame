@@ -55,6 +55,11 @@ object ToolLibs {
     const val gosn = "com.google.code.gson:gson:2.8.6"
     const val mmkv = "com.tencent:mmkv:1.2.13"
 
+    const val umeng_common = "com.umeng.umsdk:common:9.4.7"
+    const val umeng_asms = "com.umeng.umsdk:asms:1.4.0"
+    const val umeng_crash = "com.umeng.umsdk:apm:1.5.2"
+    const val umeng_abtest = "com.umeng.umsdk:abtest:1.0.0"
+
 }
 
 

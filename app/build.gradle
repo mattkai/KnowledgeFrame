@@ -56,6 +56,12 @@ android {
         }
     }
 
+    repositories{
+        flatDir{
+            dirs 'libs'
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -99,6 +105,7 @@ android {
 }
 
 dependencies {
+    implementation fileTree(include:['*.jar'], dir:'libs')
 
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.ext_junit
@@ -109,4 +116,11 @@ dependencies {
     implementation(AndroidXLibs.core_ktx)
 
     implementation(GoogleLibs.material)
+
+    implementation(ToolLibs.umeng_common)
+    implementation(ToolLibs.umeng_asms)
+    implementation(ToolLibs.umeng_crash)
+    implementation(ToolLibs.umeng_abtest)
+    implementation ToolLibs.mmkv
+
 }

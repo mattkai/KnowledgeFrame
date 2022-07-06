@@ -1,5 +1,5 @@
 ext {
-    isDebug = true // true 各个模块调试  false 组成一个apk
+    isDebug = false // true 各个模块调试  false 组成一个apk
 
     applicationId = [
             "app" : "com.kdf.app",

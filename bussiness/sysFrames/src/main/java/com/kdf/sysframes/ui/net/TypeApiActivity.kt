@@ -41,14 +41,11 @@ class TypeApiActivity: BaseVMActivity<TypeApiViewModel>(){
                     HiLog.d( "### ${it.toString()}")
                 }
             }
-
         }
-
     }
 
     override fun onResume() {
         super.onResume()
     }
-
 
 }

@@ -14,4 +14,15 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
+
+    @Test
+    fun addMain() {
+        var a = 12
+        var b = 13
+        var cc = 0
+        cc = a.times(b)
+
+        print(cc)
+    }
+
 }

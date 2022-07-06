@@ -7,11 +7,19 @@
     tools:context=".MainActivity">
 
    <androidx.appcompat.widget.AppCompatButton
-       android:id="@+id/btn_data"
+       android:id="@+id/btn_mdo"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:text="数据跳转"
+       android:text="埋点参数1"
        app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"/>
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btn_mdt"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="埋点参数2"
+       app:layout_constraintTop_toBottomOf="@+id/btn_mdo"
        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
