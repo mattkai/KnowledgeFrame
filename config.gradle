@@ -17,12 +17,12 @@ ext {
     channels = [
             "xiaomi" : [
                     "applicationId" : "com.kdf.xiaomi",
-                    "versionName" : "1.0.1.10",
+                    "versionName" : "1.0.1.11",
                     "appName" : "小米渠道"
             ],
             "wandoujia" : [
                     "applicationId" : "com.kdf.wandoujia",
-                    "versionName" : "1.0.1.08",
+                    "versionName" : "1.0.1.09",
                     "appName" : "豌豆荚渠道"
             ]
     ]

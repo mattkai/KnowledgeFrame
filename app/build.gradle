@@ -87,20 +87,20 @@ android {
     }
 
     //自动化打包
-    android.applicationVariants.all { variant ->
-
-        variant.outputs.all {
-
-            def fileName = "${variant.productFlavors.name}_v${variant.versionName}_${releaseTime()}.apk"
-
-            //这个修改输出的APK路径
-            if (variant.buildType.name != "debug") {//防止AS无法安装debug包(apk)
-                outputFileName = new File("../../../../../../outapks", fileName)
-            } else {
-                outputFileName = new File(fileName)
-            }
-        }
-    }
+//    android.applicationVariants.all { variant ->
+//
+//        variant.outputs.all {
+//
+//            def fileName = "${variant.productFlavors.name}_v${variant.versionName}_${releaseTime()}.apk"
+//
+//            //这个修改输出的APK路径
+//            if (variant.buildType.name != "debug") {//防止AS无法安装debug包(apk)
+//                outputFileName = new File("../../../../../../outapks", fileName)
+//            } else {
+//                outputFileName = new File(fileName)
+//            }
+//        }
+//    }
 
 }
 
