@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:forceDarkAllowed="false">
+
+
+    <ImageView
+        android:id="@+id/guide_bg"
+        android:layout_width="257dp"
+        android:layout_height="229dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/guide_v7_page_03" />
+
+
+    <TextView
+        android:id="@+id/guide_next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:gravity="center"
+        android:layout_above="@+id/guide_bg"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:text="我知道了"
+        android:textColor="#ff333333"
+        android:textSize="18dp"
+        app:bl_corners_radius="22dp"
+        app:bl_solid_color="#ffffffff"
+        />
+
+</RelativeLayout>

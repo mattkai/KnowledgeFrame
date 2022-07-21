@@ -18,7 +18,7 @@
         android:name=".KnowLedgeApplication"
         android:theme="@style/Theme.KnowledgeFrame">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".StaticActivity"/>
+        <activity android:name=".ui.StaticActivity"/>
+
+        <activity android:name=".ui.RooikeGuideActivity"/>
 
     </application>
 

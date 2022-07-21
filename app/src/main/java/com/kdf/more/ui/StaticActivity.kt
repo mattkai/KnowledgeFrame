@@ -1,8 +1,9 @@
-package com.kdf.more
+package com.kdf.more.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import com.kdf.more.R
 import com.umeng.analytics.MobclickAgent
 
 class StaticActivity: AppCompatActivity() {

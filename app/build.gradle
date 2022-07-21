@@ -67,6 +67,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -114,13 +118,16 @@ dependencies {
     implementation(AndroidXLibs.appcompat)
     implementation(AndroidXLibs.constraintlayout)
     implementation(AndroidXLibs.core_ktx)
-
     implementation(GoogleLibs.material)
+
+    implementation ToolLibs.layout_noober
+    implementation ToolLibs.mmkv
+    implementation ToolLibs.guide_page
 
     implementation(ToolLibs.umeng_common)
     implementation(ToolLibs.umeng_asms)
     implementation(ToolLibs.umeng_crash)
     implementation(ToolLibs.umeng_abtest)
-    implementation ToolLibs.mmkv
+
 
 }

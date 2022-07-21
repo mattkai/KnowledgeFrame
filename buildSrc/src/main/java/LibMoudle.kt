@@ -53,12 +53,18 @@ object ToolLibs {
     const val room_compiler = "androidx.room:room-compiler:2.4.0-alpha02"
 
     const val gosn = "com.google.code.gson:gson:2.8.6"
+    //腾讯mmkv数据存储
     const val mmkv = "com.tencent:mmkv:1.2.13"
 
     const val umeng_common = "com.umeng.umsdk:common:9.4.7"
     const val umeng_asms = "com.umeng.umsdk:asms:1.4.0"
     const val umeng_crash = "com.umeng.umsdk:apm:1.5.2"
     const val umeng_abtest = "com.umeng.umsdk:abtest:1.0.0"
+
+    //新手引导页工具
+    const val guide_page = "com.github.huburt-Hu:NewbieGuide:v2.4.0"
+    //按钮样式工具
+    const val layout_noober = "com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4"
 
 }
 
