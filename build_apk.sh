@@ -1,7 +1,7 @@
 #! /bin/bash
-WORK_DIR=$(cd $(dirname $0); pwd)
-echo ${WORK_DIR}
-cd ${WORK_DIR}
+WORKSPACE=$(cd $(dirname $0); pwd)
+echo ${WORKSPACE}
+cd ${WORKSPACE}
 
 BUILD_TYPE=$1
 PRODUCT_FLAVORS=$2
