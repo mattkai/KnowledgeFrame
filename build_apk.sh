@@ -21,17 +21,17 @@ TMP_PRODUCT_FLAVORS=$(echo ${PRODUCT_FLAVORS}|sed 's/^\w\|\s\w/\U&/g')
 if [ $? = 0 ]; then
     echo =========archive the artifacts=========
     DEPLOY_PATH=${OUTPUT_PATH}/konwledge/${PRODUCT_FLAVORS}/${BUILD_TIME}
-	echo "begin copy apk files: DEPLOY_PATH : ${DEPLOY_PATH}---OUTPUT_PATH: ${OUTPUT_PATH},BUILD_TIME: ${BUILD_TIME}"
+	  echo "begin copy apk files: DEPLOY_PATH : ${DEPLOY_PATH}---OUTPUT_PATH: ${OUTPUT_PATH},BUILD_TIME: ${BUILD_TIME}"
 	
-	 # 创建文件夹
+	  # 创建文件夹
     if [ ! -d ${DEPLOY_PATH} ]; then
         mkdir -p ${DEPLOY_PATH}
     fi
 	
-	echo "DEPLOY_PATH: ${DEPLOY_PATH}"
+	  echo "DEPLOY_PATH: ${DEPLOY_PATH}"
     echo "TMP_PRODUCT_FLAVORS: ${TMP_PRODUCT_FLAVORS}"
 	
-	if [ ${BUILD_TYPE} = "Debug" ]; then
+	  if [ ${BUILD_TYPE} = "Debug" ]; then
     	  # 拷贝文件到目录
     	  SOURCE_APK_FILE=${CODE_PATH}/app/build/outputs/apk/${PRODUCT_FLAVORS}/debug/app-${PRODUCT_FLAVORS}-debug.apk
     	  OUTPUT_APK_FILE=${DEPLOY_PATH}/KnowLedge_${TMP_PRODUCT_FLAVORS}_${BUILD_TIME}.apk
@@ -57,7 +57,7 @@ if [ $? = 0 ]; then
     	  cp ${SOURCE_MAPPING_FILE} ${OUTPUT_MAPPING_FILE}
     fi
 	
-	LOG="BUILD_TYPE=${BUILD_TYPE}\nPRODUCT_FLAVORS=${PRODUCT_FLAVORS}\nOUTPUT_PATH=${OUTPUT_PATH}\nBUILD_TIME=${BUILD_TIME}\n"
+	  LOG="BUILD_TYPE=${BUILD_TYPE}\nPRODUCT_FLAVORS=${PRODUCT_FLAVORS}\nOUTPUT_PATH=${OUTPUT_PATH}\nBUILD_TIME=${BUILD_TIME}\n"
     echo -e ${LOG} > ${DEPLOY_PATH}/log.txt
     LOG="./build_apk.sh BUILD_TYPE PRODUCT_FLAVORS OUTPUT_PATH BUILD_TIME "
     echo -e ${LOG} >> ${DEPLOY_PATH}/log.txt

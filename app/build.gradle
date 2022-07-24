@@ -83,10 +83,12 @@ android {
         xiaomi {
             applicationId channels.xiaomi.applicationId  // 单独的包名
             versionName channels.xiaomi.versionName // 单独的版本号
+            signingConfig signingConfigs.release
         }
         wandoujia {
             applicationId channels.wandoujia.applicationId  // 单独的包名
             versionName channels.wandoujia.versionName // 单独的版本号
+            signingConfig signingConfigs.release
         }
     }
 
